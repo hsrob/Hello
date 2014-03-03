@@ -64,6 +64,11 @@ namespace Client.iOS
 			AwaitClick();
 		}
 
+		partial void switchMode(NSObject sender)
+		{
+			lblResults.Text = "Switch Toggled: " + ((UISwitch)sender).On;
+		}
+
 		private async void AwaitClick()
 		{
 			try
