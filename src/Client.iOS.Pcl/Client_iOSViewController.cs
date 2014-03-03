@@ -15,7 +15,7 @@ namespace Client.iOS
 		public Client_iOSViewController () : base ("Client_iOSViewController", null)
 		{
 			IosPclExportClient.Configure ();
-			client = new JsonServiceClient ("http://10.0.0.8:81/");
+			client = new JsonServiceClient ("http://192.168.1.203:81/");
 		}
 
 		public override void DidReceiveMemoryWarning ()
@@ -43,7 +43,7 @@ namespace Client.iOS
 		{
 			try
 			{
-				var response = client.Get(new Hello { Name = txtName.Text });
+                var response = client.Get(new Hello { Name = txtName.Text });
 				lblResults.Text = response.Result;
 			}
 			catch (Exception ex)
@@ -68,7 +68,7 @@ namespace Client.iOS
 		{
 			try
 			{
-				var response = await client.GetAsync(new Hello { Name = txtName.Text });
+                var response = await client.GetAsync(new Hello { Name = txtName.Text });
 				lblResults.Text = response.Result;
 			}
 			catch (Exception ex)
