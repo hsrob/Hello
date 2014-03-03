@@ -26,17 +26,20 @@ namespace Client.iOS
 
 		[Action ("btnSync_Click:")]
 		partial void btnSync_Click (MonoTouch.Foundation.NSObject sender);
+
+		[Action ("switchMode:")]
+		partial void switchMode (MonoTouch.Foundation.NSObject sender);
 		
 		void ReleaseDesignerOutlets ()
 		{
-			if (txtName != null) {
-				txtName.Dispose ();
-				txtName = null;
-			}
-
 			if (lblResults != null) {
 				lblResults.Dispose ();
 				lblResults = null;
+			}
+
+			if (txtName != null) {
+				txtName.Dispose ();
+				txtName = null;
 			}
 		}
 	}

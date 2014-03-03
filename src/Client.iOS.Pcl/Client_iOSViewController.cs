@@ -15,7 +15,7 @@ namespace Client.iOS
 		public Client_iOSViewController () : base ("Client_iOSViewController", null)
 		{
 			IosPclExportClient.Configure ();
-			client = new JsonServiceClient ("http://10.0.0.8:81/");
+			client = new JsonServiceClient ("http://192.168.1.203:81/");
 		}
 
 		public override void DidReceiveMemoryWarning ()
@@ -62,6 +62,11 @@ namespace Client.iOS
 		partial void btnAwait_Click (NSObject sender)
 		{
 			AwaitClick();
+		}
+
+		partial void switchMode(NSObject sender)
+		{
+			lblResults.Text = "Switch Toggled: " + ((UISwitch)sender).On;
 		}
 
 		private async void AwaitClick()
